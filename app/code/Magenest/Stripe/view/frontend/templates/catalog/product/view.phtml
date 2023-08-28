@@ -1,0 +1,67 @@
+<?php
+/**
+ * Created by Magenest.
+ * Author: Pham Quang Hau
+ * Date: 24/05/2016
+ * Time: 02:11
+ */
+/** @var \Magenest\Stripe\Block\Catalog\Product\View $block */
+// @codingStandardsIgnoreFile
+$isRecurringProduct = $block->getIsSubscriptionProduct();
+$billingOptions = $block->getBillingOptions();
+$optionCount = 0;
+$isTotalCycleEnabled = $block->isTotalCycleEnabled();
+$maxTotalCycle = $block->getMaxTotalCycle();
+?>
+
+<?php if ($isRecurringProduct && $billingOptions) { ?>
+    <table id="stripe_subscription_options">
+        <thead>
+        <tr>
+            <th></th>
+            <th><?php echo __('Subscription Options'); ?></th>
+            <th><?php echo __('Trial Period'); ?></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <?php if ($billingOptions) { ?>
+            <?php foreach ($billingOptions as $option) {
+                $billingValue = $option['plan_id']; ?>
+                <tr>
+                    <td id="option_<?php echo $optionCount; ?>">
+                        <input type="radio" name="additional_options[Plan ID]"
+                               value="<?php echo $billingValue; ?>"/>
+                    </td>
+                    <td><?php echo __('Bills every ') . $option['frequency'] ?><?php echo $option['unit_id'] . __('(s)'); ?></td>
+                    <?php if (array_key_exists('trial_day', $option) && $option['trial_day']) { ?>
+                        <td><?php echo $option['trial_day'] . __(' day(s)'); ?></td>
+                    <?php } else { ?>
+                        <td><?php echo __('N/A'); ?></td>
+                    <?php } ?>
+                </tr>
+                <?php $optionCount++;
+            }
+        } ?>
+        </tbody>
+    </table><br>
+    <?php if ($isTotalCycleEnabled) { ?>
+        <label><?php echo __('Total Billing Cycles'); ?></label>
+        <input type="number" min="0" max="<?php echo $maxTotalCycle; ?>" name="additional_options[Total Cycles]"/>
+    <?php } ?>
+<?php } ?>
+
+<script>
+    require([
+        'jquery'
+    ], function ($) {
+        'use strict';
+
+//        $('#stripe_subscription_options').on('change', ':radio', function () {
+//            var outerTr = $(this).parent();
+//
+//            var input = outerTr.find('type', 'number');
+//            console.log(input);
+//        });
+    });
+</script>

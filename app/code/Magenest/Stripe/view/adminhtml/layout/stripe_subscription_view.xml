@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magenest\Stripe\Block\Adminhtml\Subscription\View" name="stripe_subscription_view"/>
+        </referenceContainer>
+    </body>
+    <referenceContainer name="left">
+        <block class="Magenest\Stripe\Block\Adminhtml\Subscription\View\Tabs" name="stripe_subscription_tabs">
+            <block class="Magenest\Stripe\Block\Adminhtml\Subscription\View\Tabs\Info" name="stripe_subscription_view_tab_info" template="subscription/view/info.phtml"/>
+            <block class="Magenest\Stripe\Block\Adminhtml\Subscription\View\Tabs\RelatedOrder" name="stripe_subscription_view_tab_related_order" />
+
+            <action method="addTab">
+                <argument name="name" xsi:type="string">stripe_subscription_info</argument>
+                <argument name="block" xsi:type="string">stripe_subscription_view_tab_info</argument>
+            </action>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">stripe_subscription_related_order</argument>
+                <argument name="block" xsi:type="string">stripe_subscription_view_tab_related_order</argument>
+            </action>
+        </block>
+    </referenceContainer>
+</page>

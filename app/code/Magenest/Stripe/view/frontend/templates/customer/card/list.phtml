@@ -1,0 +1,58 @@
+<?php
+
+$delUrl = $block->getUrl('stripe/customer/del');
+?>
+<script>
+    window.delUrl = '<?php echo $delUrl; ?>';
+</script>
+
+<?php $cards = $block->getDataCard(); ?>
+
+<table id="customer-booking-order-list" class="data table table-downloadable-products">
+    <?php if (!sizeof($cards)) { ?>
+        <div class="message info empty">
+            <span><?php echo __('You don\'t store any card yet.'); ?></span>
+        </div>
+    <?php } else {
+        $i = 0;
+        ?>
+        <thead>
+        <tr>
+            <th><?php echo __('ID'); ?></th>
+            <th><?php echo __('Credit Card Name'); ?></th>
+            <th><?php echo __('Expires'); ?></th>
+            <th><?php echo __('Created At'); ?></th>
+            <th><?php echo __('Status'); ?></th>
+            <th><?php echo __('Action'); ?></th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody id="card_table_body">
+        <?php foreach ($cards as $card) { ?>
+        <tr id="row-<?php echo $card['id']; ?>">
+
+            <td><?php echo ++$i; ?></td>
+            <td><span><?php echo $card['brand']; ?></span><span
+                        style="float: right;"><?php echo 'xxxxxxxxxxxx - ' . $card['last4']; ?></span></td>
+            <td><?php echo $card['exp_month'] . '/' . $card['exp_year']; ?></td>
+            <td><?php echo $card['created_at']; ?></td>
+            <td align="center" id="status-<?php echo $card['id']; ?>" class="<?php echo $card['status']; ?>"><?php echo $card['status']; ?></td>
+            <td>
+            <?php if ($card['status'] == "ERROR") { ?>
+                <button id="del-<?php echo $card['id']; ?>" value="<?php echo $card['id']; ?>">
+                    <span><?php echo __('Force Delete Card') ?></span>
+                </button>
+            <?php } else { ?>
+                <button id="del-<?php echo $card['id']; ?>" value="<?php echo $card['id']; ?>">
+                    <span><?php echo __('Delete Card') ?></span>
+                </button>
+                </td>
+                <td><span hidden id="loading-<?php echo $card['id']; ?>"> Loading </span></td>
+                </tr>
+            <?php } ?>
+
+        <?php } ?>
+        </tbody>
+    <?php } ?>
+</table>

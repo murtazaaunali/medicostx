@@ -1,0 +1,112 @@
+<?php
+/**
+ * Created by Magenest.
+ * Author: Pham Quang Hau
+ * Date: 27/05/2016
+ * Time: 10:23
+ */
+
+/** @var \Magenest\Stripe\Block\Adminhtml\Subscription\View\Tabs\Info $block */
+$order = $block->getOrder();
+$subsDetail = $block->getSubscriptionDetail();
+$plan = (array) $subsDetail['plan'];
+?>
+
+<section class="admin__page-section order-view-account-information">
+    <div class="admin__page-section-title">
+        <span class="title"><?php echo $block->escapeHtml(__('General Information')) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item order-information">
+            <div class="admin__page-section-item-title">
+                <span class="title"><?php echo __('Current Subscription Status'); ?></span>
+            </div>
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary order-information-table">
+                    <tr>
+                        <th><?php echo __('Status'); ?></th>
+                        <td><?php echo $subsDetail['status']; ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Created At'); ?></th>
+                        <td><?php echo date("Y-m-d H:i:s", $subsDetail['created']); ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Current Period Start'); ?></th>
+                        <td><?php echo date("Y-m-d H:i:s", $subsDetail['current_period_start']); ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Current Period End'); ?></th>
+                        <td><?php echo date("Y-m-d H:i:s", $subsDetail['current_period_end']); ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Trial Start'); ?></th>
+                        <?php if ($subsDetail['trial_start'] != null) { ?>
+                            <td><?php echo date("Y-m-d H:i:s", $subsDetail['trial_start']); ?></td>
+                        <?php } else { ?>
+                            <td><?php echo __('N/A'); ?></td>
+                        <?php } ?>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Trial End'); ?></th>
+                        <?php if ($subsDetail['trial_end'] != null) { ?>
+                            <td><?php echo date("Y-m-d H:i:s", $subsDetail['trial_end']); ?></td>
+                        <?php } else { ?>
+                            <td><?php echo __('N/A'); ?></td>
+                        <?php } ?>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Discount'); ?></th>
+                        <?php if ($subsDetail['discount'] != null) { ?>
+                            <td><?php echo $subsDetail['discount']; ?></td>
+                        <?php } else { ?>
+                            <td><?php echo __('N/A'); ?></td>
+                        <?php } ?>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Ended At'); ?></th>
+                        <?php if ($subsDetail['ended_at'] != null) { ?>
+                            <td><?php echo date("Y-m-d H:i:s", $subsDetail['ended_at']); ?></td>
+                        <?php } else { ?>
+                            <td><?php echo __('Not yet ended'); ?></td>
+                        <?php } ?>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="admin__page-section-item order-account-information">
+            <div class="admin__page-section-item-title">
+                <span class="title"><?php echo __('Subscribed Plan'); ?></span>
+            </div>
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary order-information-table">
+                    <tr>
+                        <th><?php echo __('Plan ID'); ?></th>
+                        <td><?php echo $plan['id']; ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Amount'); ?></th>
+                        <td><?php echo $plan['amount'] / 100; ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Billing Frequency'); ?></th>
+                        <td><?php echo __('Every ') . $plan['interval_count'] . ' ' . $plan['interval'] . __('(s)'); ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Product'); ?></th>
+                        <td><?php echo $plan['name'] ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo __('Trial Period (days)'); ?></th>
+                        <?php if ($plan['trial_period_days'] != null) { ?>
+                            <td><?php echo $plan['trial_period_days']; ?></td>
+                        <?php } else { ?>
+                            <td><?php echo __('N/A'); ?></td>
+                        <?php } ?>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</section>
+
+

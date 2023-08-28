@@ -1,0 +1,30 @@
+<?php
+/**
+ * Created by Magenest.
+ * Author: Pham Quang Hau
+ * Date: 30/05/2016
+ * Time: 21:46
+ */
+/** @var \Magenest\Stripe\Block\Adminhtml\Order\View\Info\Charge $block */
+// @codingStandardsIgnoreFile
+$data = $block->getChargeId();
+?>
+
+<table class="data-table admin__table-secondary">
+    <tbody>
+
+    <?php if ($data) {
+        if ($data['type'] == 'charge') { ?>
+            <tr>
+                <td>Stripe Charge ID</td>
+                <td><?php echo $data['id']; ?></td>
+            </tr>
+        <?php } else { ?>
+            <tr>
+                <td>Stripe Subscription ID</td>
+                <td><?php echo $data['id']; ?></td>
+            </tr>
+        <?php }
+    } ?>
+    </tbody>
+</table>

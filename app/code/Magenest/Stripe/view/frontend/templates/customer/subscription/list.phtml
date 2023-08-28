@@ -1,0 +1,49 @@
+<?php
+/**
+ * Created by Magenest.
+ * Author: Pham Quang Hau
+ * Date: 28/05/2016
+ * Time: 13:56
+ */
+/**@var \Magenest\Stripe\Block\Customer\Subscription $block */
+?>
+<?php $subs = $block->getCustomerSubscriptions(); ?>
+
+<table id="customer-booking-order-list" class="data table table-downloadable-products">
+    <?php if (!sizeof($subs)) {?>
+        <div class="message info empty">
+            <span><?php echo __('You don\'t have any subscription yet.'); ?></span>
+        </div>
+    <?php } else { ?>
+        <thead>
+        <tr>
+            <th><?php echo __('Subscription ID'); ?></th>
+            <th><?php echo __('Order ID'); ?></th>
+            <th><?php echo __('Curent Period Start'); ?></th>
+            <th><?php echo __('Curent Period End'); ?></th>
+            <th><?php echo __('Status'); ?></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <?php foreach ($subs as $sub) { ?>
+            <td><?php echo $sub->getData('subscription_id'); ?></td>
+            <td><?php echo $sub->getData('order_id');?></td>
+            <td><?php echo $sub->getData('period_start');?></td>
+            <td><?php echo $sub->getData('period_end');?></td>
+            <td><?php echo $sub->getData('status');?></td>
+
+            <td data-th="<?php echo $block->escapeHtml(__('Actions')) ?>" class="col actions">
+                <a href="<?php echo $block->getSubscriptionDetailUrl($sub->getId()); ?>" class="action view">
+                    <span><?php echo __('View')?></span>
+                </a>
+                <a href="<?php echo $block->getOrderViewUrl($sub->getOrderId()); ?>" class="action view">
+                    <span><?php echo __('Related Order') ?></span>
+                </a>
+            </td>
+        </tr>
+        <?php } ?>
+        </tbody>
+    <?php } ?>
+</table>

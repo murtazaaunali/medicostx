@@ -1,0 +1,1547 @@
+<?php
+    $header_type = $this->getConfig('porto_settings/header/header_type');
+    $class = $header_type == 16 || $header_type == 17 || $header_type == 19 || $header_type == 20 || $header_type == 21 || $header_type == 23 || $header_type == 24 || $header_type == 25  || $header_type == 26 || $header_type == 27 ? 'header-newskin':'';
+?>
+<style type="text/css">
+.column .main{
+   padding: 0px;
+}
+.price {
+	display: none;
+}
+.switcher-currency{
+	display: none !important;
+	}
+.switcher-language{
+	display: none !important;
+	}
+.compare_main{
+	display: none !important;
+	}
+.email_header{
+	border-left: 0px !important;
+	}
+.benefits_para h5{
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+	}
+.benefits_para p{
+	font-size: 15px;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 0px;
+	}
+.solution-containt{
+    margin-bottom: 25px;
+    text-align: justify;
+	}
+.career_para_set h2{
+    text-align: left;
+    margin: 0px;
+    margin-bottom: 15px;
+	}
+.career_para_set ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+	}
+.career_para_set ul {
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+	}
+.dis_block_important .menu-right-block{
+    display: none !important;
+	}
+ul.mega-columns{
+	flex: none;
+    max-width: none;
+	}
+.sw-megamenu.navigation .subchildmenu.mega-columns.columns4 > li{
+    width: 20% !important;
+	}
+.sw-megamenu.navigation .subchildmenu.mega-columns.columns4 > li:after{
+    content: "";
+    border-right: 1px #eaeaea solid;
+    height: 110px;
+    display: block;
+    position: absolute;
+    top: 27px;
+    right: 0px;
+	}
+.sw-megamenu.navigation .subchildmenu.mega-columns.columns4 > li:last-child:after{
+	display: none !important;
+	}
+.sw-megamenu.navigation .subchildmenu.mega-columns.columns4 > li:nth-child(4n+1){
+	clear: none !important;
+	}
+li ul.subchildmenu li.level2 a span{
+    text-transform: capitalize !important;
+	}
+#featured_product .block-title strong{
+    font-family: Open Sans !important;
+    text-align: center;
+    color: #002848;
+    font-size: 33px !important;
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-bottom: 44px;
+    text-transform: uppercase;
+    display: block;
+	}
+.email_header a{
+	text-decoration: none !important;
+	color: #fff !important;
+	}
+.cms-index-index .owl-buttons{
+    display: none !important;
+	}
+header.page-header.sticky-header .nav-sections{
+	padding: 0px !important;
+	top: 40px !important;
+	}
+
+.fixed-panel {
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+}
+.sw-megamenu.navigation span.cat-label.cat-label-label1{
+	display: none !important;
+	}
+.checkout-cart-index #maincontent {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+	}
+.customer-account-login #maincontent{
+	max-width: 1169px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
+	}
+.customer-account-login .base{
+    display: block;
+    padding-bottom: 15px;
+	}
+.customer-account-login .control{
+	width: 100% !important;
+	}
+
+.customer-account-create #maincontent{
+	max-width: 1169px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
+	}
+.customer-account-create .base{
+    display: block;
+    padding-bottom: 15px;
+	}
+.customer-account-create .control{
+	width: 100% !important;
+	}
+.checkout-onepage-success #maincontent {
+    max-width: 1169px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
+	}
+.customer-account-forgotpassword #maincontent{
+	max-width: 1169px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
+	}
+.customer-account-forgotpassword .base{
+    display: block;
+    padding-bottom: 15px;
+	}
+.checkout-success a{
+    margin-top: 10px !important;
+	}
+#registration input{
+    margin-top: 10px !important;
+	}
+header.page-header.sticky-header .navigation li.level0 > .level-top{
+	line-height: 42px !important;
+	}
+header.page-header.sticky-header .navigation li.level0.parent > a:after {
+    line-height: 42px;
+	}
+header.page-header.sticky-header .minicart-wrapper {
+    right: 9% !important;
+    top: 52% !important;
+	}
+@media screen and (max-width: 767px) and (min-width: 320px){
+.custom-logo-header {
+	margin-top: 100px !important;
+}
+.catalog-product-view .container-fluid{
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+	}
+.product-reviews-summary .reviews-actions a{
+	font-size: 11px !important;
+	}
+.products.wrapper ~ .toolbar .pages{
+	width: auto !important;
+	}
+.block.newsletter .actions{
+    display: block !important;
+	vertical-align: inherit !important;
+	width: auto !important;
+	}
+.footer-top .block.newsletter .actions button{
+	border-radius: 0px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+	}
+.footer-top .block.newsletter .control input{
+    border-radius: 8px !important;
+	}
+.footer-top .block.newsletter .actions button{
+    border-radius: 7px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+	}
+.footer-top .block.newsletter{
+    max-width: initial;
+    width: 100%;
+	}
+.main_contact_right p {
+    font-size: 10px !important;
+	}
+.main_banner_history{
+	width: 100% !important;
+	height: 72px !important;
+	}
+.row_widd_res{
+    width: 286px !important;
+    margin: 0px auto !important;
+	}
+.wound{
+    width: 281px !important;
+    margin: 0px auto !important;
+	}
+.testimonial_reviews{
+    padding-bottom: 20px;
+	}
+.owl-dots{
+	display: none !important;
+	}
+.checkout-cart-index #maincontent{
+	padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+.product-item-name{
+	margin-top: 0px !important;
+	}
+.product-item-details{
+	padding-top: 0px !important;
+	}
+.cart-summary{
+    border-top: 0px !important;
+	}
+.customer-account-login #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 20px !important;
+	}
+.customer-account-create #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 20px !important;
+	}
+.customer-account-create .page-title {
+    font-size: 23px !important;
+	}
+.checkout-onepage-success #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 14px !important;
+	}
+#registration .action.primary{
+	margin-top: 10px;
+    width: 100%;
+	}
+.sw-megamenu.navigation li.ui-menu-item > .open-children-toggle {
+    right: -20px;
+    top: -2px;
+    float: right;
+    position: relative;
+	}
+.open-children-toggle:after{
+    content:"+";
+    color:#777;
+    font-weight: bolder;
+    }
+.submenu.opened{
+    width: 100%;
+	}
+.navigation li.level0 > a.ui-state-active, .navigation li.level0 > a.ui-state-active + .submenu {
+    background-color: transparent !important;
+	}
+.sw-megamenu.navigation .subchildmenu.mega-columns.columns4 > li{
+    width: 100% !important;
+	}
+.submenu.opened .container{
+    padding: 0px !important;
+	}
+ul.mega-columns{
+    padding-left: 0px !important;
+	}
+.sw-megamenu.navigation .subchildmenu.mega-columns.columns4 > li:after{
+	display: none !important;
+	}
+.submenu.opened .open-children-toggle{
+	display: none !important;
+	}
+.header-newskin .logo{
+    margin-right: 15px !important;
+	margin-top: 26px !important;
+	    width: 189px !important;
+	}
+.header-container.type21 .menu-icon{
+	float: left !important;
+	}
+.page-header.type16 .block-search{
+    margin-left: 15px !important;
+    margin-top: 15px !important;
+	}
+.main_header_set{
+    margin-top: 7px !important;
+    margin-left: 6px !important;
+	}
+.main_header .control{
+	position: absolute;
+    top: 60px;
+    width: 190px;
+    left: -88px;
+	}
+.main_left{
+	float: right;
+	}
+.customer-account-forgotpassword #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 14px;
+	}
+.block-search{
+    clear: initial;
+	}
+.main_header strong.logo{
+    height: 79px;
+	}
+.main_header strong.logo img{
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+        max-height: initial;
+ 	}
+ .navigation .parent .level-top:after{
+ 	display: none;
+ 	}
+.owl-banner-carousel .content{
+    bottom: 5px !important;
+    top: initial !important;
+ 	}
+
+.homepage-bar .text-area{
+	text-align: center !important;
+	display: block;
+	}
+.homepage-bar .col-lg-4{
+	text-align: center !important;
+	display: block;
+	}
+.main_header .container{
+	padding:0px !important;
+	}
+.cms-index-index .container{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+.profile-image{
+	float: none !important;
+	text-align: center;
+	}
+.profile-image img{
+	float: none !important;
+	}
+.profile-by-year{
+    width: 100% !important;
+    float: none !important;
+	}
+.frofile-border{
+	display: none;
+	}
+.profile-2010{
+    float: none !important;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    background: #02A3F3;
+	}
+.profile-containt{
+    line-height: initial !important;
+    width: 100% !important;
+    border-radius: 0px !important;
+    padding: 10px !important;
+	}
+.profile-2010 p{
+    top: 14px;
+	}
+.layout-fullwidth #maincontent{
+	margin-bottom: 0px !important;
+	}
+.content-row p{
+	font-size: 13px !important;
+    line-height: 20px !important;
+	}
+#layer-product-list{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+.sidebar-main{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+.sticky-product{
+	display: none !important;
+	}
+.content span{
+	color:initial !important;
+	}
+.checkout-index-index .container-fluid{
+	padding-right: 15px !important;
+    padding-left: 15px !important;
+	}
+.opc-estimated-wrapper{
+    margin: 0px -15px 15px;
+	}
+.authentication-wrapper{
+    position: relative;
+    top: 20px;
+	}
+.checkout-payment-method .payment-methods{
+	margin: 0px;
+	}
+.page-title{
+    font-size: 20px !important;
+	}
+.checkout-cart-index.layout-fullwidth #maincontent{
+    margin-bottom: 20px !important;
+	}
+.main_header{
+	max-width: initial !important;
+	}
+.main_header .container{
+	max-width: initial !important;
+	}
+.main_doctor_discrip{
+	padding: 0px !important;
+	}
+.main_doctor_pic{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+	}
+.patients_main{
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+	}
+.patients_display{
+	padding-top: 0px !important;
+	}
+.footer-top-inner .block{
+    text-align: center !important;
+	}
+.main_header .control {
+    top: 42px !important;
+    left: -122px !important;
+    margin: 0px !important;
+	}
+.main_search input{
+border-radius: 3px !important;
+	}
+}
+@media screen and (max-width: 991px) and (min-width: 768px){
+.catalog-product-view .container-fluid{
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+	}
+.product-reviews-summary .reviews-actions a{
+	font-size: 11px !important;
+	}
+.page-header.type16 .navigation li.level0 > .level-top {
+    padding-left: 0px !important;
+    padding-right: 10px !important;
+	}
+.dis_block_important ul li a {
+    font-size: 10px !important;
+	}
+.products-grid .product-item{
+    min-height: 386px;
+	}
+.owl-dots{
+	display: none !important;
+	}
+.checkout-cart-index #maincontent{
+	padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+.abs-shopping-cart-items-desktop, .block-cart-failed, .cart-container .form-cart, .cart-container .cart-gift-item{
+	width: 100% !important;
+	}
+.cart-summary{
+	width: 100%;
+    margin-top: 20px;
+	}
+.checkout-cart-index #discount-coupon-form .control input{
+	width: 500px !important;
+	}
+.panel_main .panel.header{
+	max-width: initial;
+	}
+.cms-history .page-wrapper >.breadcrumbs{
+	margin-bottom: 0px !important;
+	}
+.customer-account-login #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 20px !important;
+	}
+.customer-account-create #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 20px !important;
+	}
+.checkout-onepage-success #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 14px;
+	}
+.customer-account-forgotpassword #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 14px;
+	}
+.widd_col_2{
+    width: 12% !important;
+    flex: initial !important;
+    max-width: initial !important;
+	}
+.widd_col_10{
+    width: 87% !important;
+    flex: initial !important;
+    max-width: initial !important;
+	}
+.page-header.type16 .logo{
+    width: 135px !important;
+	}
+.block-search{
+    max-width: 599px !important;
+    width:100% !important;
+	}
+.content .main_header_set{
+	float: left !important;
+	padding-bottom: 20px !important;
+	padding-top: 0px !important;
+	}
+.main_header .minisearch{
+	width: 100%;
+	}
+.main_search{
+    width: 270px !important;
+    margin-left: 19px !important;
+	}
+.home_insurance{
+	padding-left: 15px !important;
+    padding-right: 15px !important;
+    max-width: initial !important;
+    padding-bottom: 20px !important;
+	}
+.layout-fullwidth .home_insurance .col-md-7{
+	padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+.home_insurance .benefits-heading{
+	font-size: 28px !important;
+	}
+.home_insurance p{
+	font-size: 14px !important;
+	}
+.homepage-bar h3 {
+    font-size: 12px !important;
+	}
+.homepage-bar p {
+    font-size: 9px !important;
+	}
+.footer-middle .col-lg-3{
+    width: 16% !important;
+    float: left !important;
+	}
+.footer-middle .col-lg-9{
+    float: left !important;
+    width: 83% !important;
+	}
+.footer .container .row .col-md-4{
+    max-width: initial !important;
+    flex: auto !important;
+    width: 33% !important;
+	}
+.footer-medicos h2{
+    font-size: 14px !important;
+	}
+.marg-top-03{
+    margin-top: 15px !important;
+	}
+.panel_main .container{
+	max-width: initial !important;
+	}
+.row{
+	margin-left: -15px !important;
+	margin-right: -15px !important;
+	}
+.main_header .container{
+	max-width: initial !important;
+	}
+.header.content.main_header{
+	max-width: initial !important;
+    padding: 0px !important;
+	}
+.sticky-logo_second{
+    left: 3% !important;
+	}
+.getFixed .minicart-wrapper{
+	display: none !important;
+	}
+.getFixed .dis_block_important ul {
+    width: 545px !important;
+	}
+.bg_home_benifit .team-test-para{
+    font-size: 12px !important;
+    line-height: 18px !important;
+	}
+.copyright-txt{
+	font-size: 12px;
+	}
+.sw-megamenu {
+	max-width: initial !important;
+	}
+.profile-containt{
+    min-height: 145px !important;
+    position: relative !important;
+    padding-right: 17px !important;
+    width: 81%;
+	}
+.profile-containt p{
+    position: absolute !important;
+    top: 30% !important;
+    width: 94% !important;
+    font-size: 14px !important;
+        line-height: initial;
+	}
+.frofile-border {
+    width: 8px !important;
+	}
+.homepage-bar .text-area{
+	margin-left: 0px !important;
+	}
+.team-names {
+    line-height: initial;
+    font-size: 14px;
+	}
+.main_doctor_discrip{
+	padding-left: 0px !important;
+    padding-top: 0px !important;
+	}
+.main_doctor_discrip p{
+	font-size: 13px !important;
+	}
+.patients_main p{
+	font-size: 13px !important;
+	}
+.page-products #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+.page-header.type16 .minicart-wrapper .block-minicart{
+    left: 31px !important;
+    top: 85% !important;
+	}
+.opc-progress-bar-item{
+    width: 158px !important;
+	}
+.checkout-index-index #maincontent{
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+	}
+#opc-shipping_method{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+}
+@media screen and (max-width: 1024px) and (min-width: 992px){
+.dis_block_important ul li a {
+    font-size: 10px !important;
+	}
+.main_header .block-search {
+    width: 41% !important;
+	}
+.main_header_set{
+	float: right !important;
+    width: 29% !important;
+    padding-top: 39px !important;
+	}
+.cms-index-index .home_insurance .col-md-7 {
+    width: 100%;
+    margin: 0px auto;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+	}
+.owl-dots{
+	display: none !important;
+	}
+.page-layout-1column .block.widget .products-grid .product-item{
+    margin-left: 15px !important;
+	}
+.checkout-cart-index #maincontent{
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+	}
+.header.content.main_header{
+    padding: 0px;
+	}
+.customer-account-login #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+	padding-top: 20px !important;
+	}
+.customer-account-create #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 20px !important;
+	}
+.checkout-onepage-success #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 14px;
+	}
+.customer-account-forgotpassword #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 14px;
+	}
+#registration .action.primary{
+	width: auto !important;
+	}
+.main_search {
+    width: 167px !important;
+	}
+.main_search input{
+    padding: 0px !important;
+    padding-left: 11px !important;
+	}
+.main_header .minisearch{
+    width: 89% !important;
+	}
+.home_insurance{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+.getFixed .dis_block_important ul {
+    width: 750px !important;
+	}
+.sticky-logo_second{
+	left: 3% !important;
+	}
+header.page-header.sticky-header .minicart-wrapper{
+	right: 2% !important;
+	}
+.bg_home_benifit .team-test-para{
+    font-size: 12px !important;
+    line-height: 18px !important;
+	}
+.copyright-txt{
+	font-size: 12px;
+	}
+.sw-megamenu {
+	max-width: initial !important;
+	}
+.profile-containt{
+    min-height: 145px !important;
+    position: relative !important;
+    padding-right: 17px !important;
+    width: 87%;
+	}
+.profile-containt p{
+    position: absolute !important;
+    top: 30% !important;
+    width: 94% !important;
+    font-size: 14px !important;
+        line-height: initial;
+	}
+.frofile-border {
+    width: 50px !important;
+	}
+.homepage-bar .text-area{
+	margin-left: 0px !important;
+	}
+.team-names {
+    line-height: initial;
+    font-size: 14px;
+	}
+.main_doctor_discrip{
+	padding-left: 0px !important;
+    padding-top: 0px !important;
+	}
+.main_doctor_discrip p{
+	font-size: 13px !important;
+	}
+.patients_main p{
+	font-size: 13px !important;
+	}
+.page-products #maincontent{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+.page-header.type16 .minicart-wrapper .block-minicart{
+    left: 31px !important;
+    top: 85% !important;
+	}
+.opc-progress-bar-item{
+    width: 158px !important;
+	}
+.checkout-index-index #maincontent{
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+	}
+#opc-shipping_method{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+	}
+.panel_main .container{
+	max-width: initial !important;
+	}
+.row{
+	margin-left: -15px !important;
+	margin-right: -15px !important;
+	}
+.main_header .container{
+	max-width: initial !important;
+	}
+.header.content.main_header{
+	max-width: initial !important;
+    padding: 0px !important;
+	}
+.footer-middle .container{
+	max-width: inherit !important;
+	}
+.footer-top .container{
+	max-width: inherit !important
+	}
+.homepage-bar .container{
+    max-width: inherit !important;
+	}
+.home_insurance .benefits-heading{
+    font-size: 31px !important;
+	}
+.marg-top-03{
+    margin-top: 10px !important;
+	}
+.footer-medicos h2{
+    font-size: 16px;
+	}
+.footer-middle .col-lg-3{
+    max-width: 15%;
+	}
+.footer-middle .col-lg-9{
+    max-width: 97%;
+    flex: 0 0 85%;
+	}
+.catalog-product-view .column.main{
+    padding-left: 15px !important;
+    padding-top: 8px !important;
+	}
+.page-header.type16 .minicart-wrapper .block-minicart {
+    right: 8px !important;
+    top: 85% !important;
+	}
+}
+
+.step_main{
+    margin-bottom: 22px;
+	}
+.Para p{
+    text-align: justify !important;
+    text-align-last: center !important;
+	}
+.Para{
+    padding-bottom: 30px !important;
+	}
+.cms-terms-and-conditions .Para p{
+    text-align-last: start !important;
+	}
+.cms-privacy-policy .Para p{
+	text-align-last: start !important
+	}
+#at-share-dock{
+	display: none !important;
+	opacity: 0px !important;
+	z-index: -99999 !important;
+    }
+#banner-slider-demo-1{
+	margin-top: 0px !important;
+	}
+.sticky-logo_second{
+    float: left;
+    position: absolute;
+    top: 2px;
+    display: none;
+    left: 9%;
+	}
+.sticky-logo_second img{
+    width: 100%;
+	}
+.getFixed .sticky-logo_second{
+	display: block !important;
+	}
+.getFixed .dis_block_important ul{
+    display: table;
+    margin: 0px auto;
+    float: right;
+    width: 954px;
+	}
+.login-container .fieldset:after{
+	display: none !important;
+	}
+.main_left{
+    display: inline;
+	}
+.owl-dots{
+	display: none !important;
+	}
+.breadcrumbs li{
+	line-height: initial !important;
+	}
+.breadcrumbs li.home a {
+    line-height: 20px !important;
+	}
+.main-related-product-detail{
+    background: #F6F6F6;
+    padding-top: 40px;
+    display: block;
+	}
+.main-related-product-detail .block-title.title{
+	border-bottom: 1px #B8B8B8 solid;
+    padding-bottom: 11px;
+    margin-bottom: 25px;
+	}
+.main-related-product-detail .products {
+    margin-top: 33px;
+	}
+.owl-buttons{
+	display: none;
+	}
+.main-related-product-detail .block .title strong {
+    font-size: 17px !important;
+    color: #313131 !important;
+    font-weight: bold !important;
+	}
+.products-related .product-item{
+    border: 1px #DADADA solid;
+	}
+.main_header_set .custom-block{
+	padding-right: 29px !important;
+	}
+.ab-image{
+	text-transform: uppercase !important;
+	}
+.team-test-para{
+	font-weight: 600 !important;
+	}
+.main_header_set a{
+	text-decoration: none;
+	}
+.footer-bottom a{
+	text-decoration: none !important;
+	}
+.contact-index-index .layout-fullwidth #maincontent{
+	max-width: inhitial !important;
+	}
+.col-md-6.flot-right a:hover p.align-right{
+	color: #02A3F3;
+	}
+
+.custom-logo-header {
+	margin-top: 30px;
+}
+
+</style>
+<header class="page-header type<?php echo $header_type; ?> <?php echo $class;?>" >
+<?php echo $this->getChildHtml("header_customer_form_login"); ?>
+<?php if($header_type == 3 || $header_type == 4 || $header_type == 9): ?>
+    <div class="header content">
+    <?php echo $this->getChildHtml("logo"); ?>
+    <?php echo $this->getChildHtml("navigation.sections"); ?>
+        <div class="panel header">
+            <div class="top-panel">
+                <?php echo $this->getChildHtml("skip_to_content"); ?>
+                <?php echo $this->getChildHtml("header.links"); ?>
+                <div class="search-area">
+                    <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i></a>
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                </div>
+            </div>
+            <div class="bottom-panel">
+                <?php echo $this->getChildHtml("currency"); ?>
+                <?php echo $this->getChildHtml("store_language"); ?>
+                <?php echo $this->getChildHtml("minicart"); ?>
+            </div>
+        </div>
+    </div>
+<?php elseif($header_type == 12): ?>
+    <div class="header content">
+    <?php echo $this->getChildHtml("logo"); ?>
+    <?php echo $this->getChildHtml("navigation.sections"); ?>
+        <div class="panel header">
+            <div class="top-panel">
+                <?php echo $this->getChildHtml("skip_to_content"); ?>
+                <div class="top-links-area">
+                    <a class="top-links-icon" href="javascript:void(0)">links</a>
+                    <?php echo $this->getChildHtml("header.links"); ?>
+                </div>
+                <?php echo $this->getChildHtml("custom_block"); ?>
+                <div class="search-area">
+                    <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i></a>
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                </div>
+            </div>
+            <div class="bottom-panel">
+                <?php echo $this->getChildHtml("currency"); ?>
+                <?php echo $this->getChildHtml("store_language"); ?>
+                <?php echo $this->getChildHtml("minicart"); ?>
+            </div>
+        </div>
+    </div>
+<?php elseif($header_type == 13 || $header_type == 26): ?>
+    <div class="header content">
+    <?php echo $this->getChildHtml("logo"); ?>
+        <div class="panel header">
+            <div class="top-panel">
+                <?php echo $this->getChildHtml("skip_to_content"); ?>
+                <div class="menu-area">
+                    <a href="javascript:void(0)" class="shop-menu">Shop</a>
+                    <?php echo $this->getChildHtml("navigation.sections"); ?>
+                </div>
+                <div class="top-links-area">
+                    <a class="top-links-icon" href="javascript:void(0)">links</a>
+                    <?php echo $this->getChildHtml("header.links"); ?>
+                </div>
+                <?php if($header_type == 26):?>
+                <?php echo $this->getChildHtml("custom_block"); ?>
+                <?php endif;?>
+            </div>
+            <div class="bottom-panel">
+                <?php echo $this->getChildHtml("currency"); ?>
+                <?php echo $this->getChildHtml("store_language"); ?>
+                <?php if($header_type == 26):?>
+                <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+                <?php endif;?>
+                <div class="search-area">
+                    <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i></a>
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                </div>
+                <?php echo $this->getChildHtml("minicart"); ?>
+            </div>
+        </div>
+    </div>
+<?php elseif($header_type == 5 || $header_type == 24 ): ?>
+    <div class="panel wrapper">
+        <div class="panel header">
+            <?php echo $this->getChildHtml("skip_to_content"); ?>
+            <?php echo $this->getChildHtml("currency"); ?>
+            <?php echo $this->getChildHtml("store_language"); ?>
+            <?php if($header_type == 24):?>
+            <div class="top-links-area">
+                <div class="top-links-icon"><a href="javascript:void(0)"><?php echo __('links');?></a></div>
+                <?php echo $this->getChildHtml("header.links"); ?>
+            </div>
+            <?php echo $this->getChildHtml("custom_block"); ?>
+            <?php endif;?>
+            <?php if($header_type == 5):?>
+            <?php echo $this->getChildHtml("header.links"); ?>
+            <?php endif;?>
+        </div>
+    </div>
+    <div class="header content">
+        <?php echo $this->getChildHtml("logo"); ?>
+        <?php echo $this->getChildHtml("minicart"); ?>
+        <?php if($header_type == 24):?>
+        <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+        <?php endif;?>
+        <div class="search-area">
+            <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i></a>
+            <?php echo $this->getChildHtml("top.search"); ?>
+        </div>
+        <?php echo $this->getChildHtml("navigation.sections"); ?>
+    </div>
+<?php elseif($header_type == 6 || $header_type == 19): ?>
+    <div class="panel wrapper">
+        <div class="panel header">
+            <?php echo $this->getChildHtml("skip_to_content"); ?>
+            <?php echo $this->getChildHtml("currency"); ?>
+            <?php echo $this->getChildHtml("store_language"); ?>
+            <?php echo $this->getChildHtml("header.links"); ?>
+        </div>
+    </div>
+    <div class="header content">
+        <?php echo $this->getChildHtml("logo"); ?>
+        <?php echo $this->getChildHtml("minicart"); ?>
+        <?php if($header_type == 19):?>
+        <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+        <?php endif;?>
+        <div class="search-area">
+            <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i></a>
+            <?php echo $this->getChildHtml("top.search"); ?>
+        </div>
+        <?php echo $this->getChildHtml("custom_block"); ?>
+        <?php echo $this->getChildHtml("navigation.sections"); ?>
+    </div>
+<?php elseif($header_type == 7 || $header_type == 23 ): ?>
+    <div class="panel wrapper">
+        <div class="panel header">
+            <div class="search-area">
+                <a href="javascript:void(0)" class="search-toggle-icon"><em class="porto-icon-search"></em><?php echo __('Search'); ?></a>
+                <?php echo $this->getChildHtml("top.search"); ?>
+            </div>
+            <?php echo $this->getChildHtml("skip_to_content"); ?>
+            <?php echo $this->getChildHtml("currency"); ?>
+            <?php echo $this->getChildHtml("store_language"); ?>
+            <?php echo $this->getChildHtml("minicart"); ?>
+            <span class="split"></span>
+            <div class="toplinks-area">
+                <a href="javascript:void(0)" class="top-links-icon"><?php echo __('Links'); ?></a>
+                <?php echo $this->getChildHtml("header.links"); ?>
+            </div>
+            <span class="split"></span>
+            <?php echo $this->getChildHtml("custom_block"); ?>
+        </div>
+    </div>
+    <div class="header content">
+        <?php echo $this->getChildHtml("logo"); ?>
+        <?php if($header_type == 23):?>
+        <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+        <?php endif;?>
+        <?php echo $this->getChildHtml("navigation.sections"); ?>
+    </div>
+<?php elseif($header_type == 8 || $header_type == 25 ): ?>
+    <div class="panel wrapper">
+        <div class="panel header">
+            <?php echo $this->getChildHtml("skip_to_content"); ?>
+            <?php echo $this->getChildHtml("currency"); ?>
+            <?php echo $this->getChildHtml("store_language"); ?>
+            <?php echo $this->getChildHtml("header.links"); ?>
+        </div>
+    </div>
+    <div class="header content">
+    <?php echo $this->getChildHtml("logo"); ?>
+    <?php echo $this->getChildHtml("minicart"); ?>
+    <?php if($header_type == 25):?>
+    <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+    <?php endif;?>
+    <?php echo $this->getChildHtml("top.search"); ?>
+    <?php echo $this->getChildHtml("custom_block"); ?>
+    </div>
+    <div class="menu-container">
+        <?php
+            $toggle_text = $header_type == 8 ? $this->getConfig('porto_settings/header/toggle_text') : $this->getConfig('porto_settings/header/toggle_text_25');
+            $custom_block_id_8 = $header_type == 8 ? $this->getConfig('porto_settings/header/static_block_8') : $this->getConfig('porto_settings/header/static_block_25');
+        ?>
+        <div class="container">
+            <div class="menu-wrapper">
+                <div class="drop-menu">
+                    <a href="javascript:void(0)">
+                        <?php echo $toggle_text; ?>
+                    </a>
+                    <?php echo $this->getChildHtml("navigation.sections"); ?>
+                </div>
+                <div class="custom-menu-block">
+                <?php
+                    $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
+                    if($block) {
+                        $block->setBlockId($custom_block_id_8);
+                    }
+                    if($block){
+                        echo $block->toHtml();
+                    }
+                ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php elseif($header_type == 10 || $header_type == 22): ?>
+    <div class="switcher-area">
+        <?php echo $this->getChildHtml("skip_to_content"); ?>
+        <?php echo $this->getChildHtml("currency"); ?>
+        <?php echo $this->getChildHtml("store_language"); ?>
+        <?php echo $this->getChildHtml("minicart"); ?>
+    </div>
+    <div class="header content">
+    <?php echo $this->getChildHtml("logo"); ?>
+    <?php if($header_type == 22):?>
+    <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+    <?php echo $this->getChildHtml("top.search"); ?>
+    <?php endif;?>
+    <?php echo $this->getChildHtml("navigation.sections"); ?>
+    <?php if($header_type == 10):?>
+    <?php echo $this->getChildHtml("top.search"); ?>
+    <?php endif;?>
+    </div>
+    <div class="panel wrapper">
+        <div class="panel header">
+            <?php echo $this->getChildHtml("header.links"); ?>
+        </div>
+    </div>
+    <div class="custom-block-area">
+        <?php echo $this->getChildHtml("custom_block"); ?>
+    </div>
+<?php elseif($header_type == 14 ): ?>
+    <div class="header content">
+    <?php echo $this->getChildHtml("logo"); ?>
+    <?php echo $this->getChildHtml("navigation.sections"); ?>
+        <div class="panel header">
+            <div class="top-panel">
+                <?php echo $this->getChildHtml("skip_to_content"); ?>
+                <?php echo $this->getChildHtml("header.links"); ?>
+            </div>
+            <div class="bottom-panel">
+                <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+                <?php echo $this->getChildHtml("currency"); ?>
+                <?php echo $this->getChildHtml("store_language"); ?>
+                <div class="search-area">
+                    <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i><span><?php echo __('Search'); ?></span></a>
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                </div>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml("minicart"); ?>
+    </div>
+<?php elseif($header_type == 15 ): ?>
+    <div class="header content">
+    <?php echo $this->getChildHtml("logo"); ?>
+        <div class="header-right-area">
+            <div class="switcher-area">
+                <div class="search-area">
+                    <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i><span><?php echo __('Search'); ?></span></a>
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                </div>
+                <div class="cart-area">
+                    <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <?php echo $this->getChildHtml("minicart"); ?>
+                </div>
+            </div>
+            <div class="header-link-area">
+                <div class="top-links-area panel header">
+                    <?php echo $this->getChildHtml("skip_to_content"); ?>
+                    <?php echo $this->getChildHtml("header.links"); ?>
+                </div>
+                <div class="main-link">
+                    <?php echo $this->getChildHtml("navigation.sections"); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php elseif($header_type == 17 ): ?>
+    <div class="main-panel-top">
+        <div class="container">
+            <div class="main-panel-inner">
+                <div class="panel wrapper">
+                    <div class="panel header">
+                        <?php echo $this->getChildHtml("skip_to_content"); ?>
+                        <?php echo $this->getChildHtml("currency"); ?>
+                        <?php echo $this->getChildHtml("store_language"); ?>
+                        <?php echo $this->getChildHtml("header.links"); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header content">
+        <?php echo $this->getChildHtml("logo"); ?>
+        <?php echo $this->getChildHtml("minicart"); ?>
+        <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+        <?php echo $this->getChildHtml("top.search"); ?>
+        <?php echo $this->getChildHtml("custom_block"); ?>
+    </div>
+    <?php echo $this->getChildHtml("navigation.sections"); ?>
+<?php elseif($header_type == 18 ): ?>
+    <div class="main-panel-top">
+        <div class="container">
+            <div class="main-panel-inner">
+                <div class="panel wrapper">
+                    <div class="panel header">
+                        <?php echo $this->getChildHtml("skip_to_content"); ?>
+                        <?php echo $this->getChildHtml("header.links"); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header content">
+        <div class="select-area">
+            <?php echo $this->getChildHtml("currency"); ?>
+            <?php echo $this->getChildHtml("store_language"); ?>
+        </div>
+        <?php echo $this->getChildHtml("logo"); ?>
+        <?php echo $this->getChildHtml("minicart"); ?>
+        <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+        <?php echo $this->getChildHtml("top.search"); ?>
+    </div>
+    <?php echo $this->getChildHtml("navigation.sections"); ?>
+<?php elseif($header_type == 20 ): ?>
+    <div class="header content">
+        <?php echo $this->getChildHtml("logo"); ?>
+        <?php echo $this->getChildHtml("navigation.sections"); ?>
+        <div class="panel header">
+            <div class="top-panel">
+                <?php echo $this->getChildHtml("skip_to_content"); ?>
+                <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+                <div class="search-area">
+                    <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i></a>
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                </div>
+                <?php echo $this->getChildHtml("currency"); ?>
+                <?php echo $this->getChildHtml("store_language"); ?>
+            </div>
+            <div class="bottom-panel">
+                <div class="top-links-area">
+                    <div class="top-links-icon"><a href="javascript:void(0)"><?php echo __('links');?></a></div>
+                    <?php echo $this->getChildHtml("header.links"); ?>
+                </div>
+                <?php echo $this->getChildHtml("custom_block"); ?>
+                <?php echo $this->getChildHtml("minicart"); ?>
+            </div>
+        </div>
+    </div>
+<?php elseif($header_type == 21 ): ?>
+    <div class="header content">
+        <?php echo $this->getChildHtml("logo"); ?>
+        <div class="panel header">
+            <div class="top-panel">
+                <?php echo $this->getChildHtml("skip_to_content"); ?>
+                <?php echo $this->getChildHtml("custom_block"); ?>
+                <div class="top-links-area">
+                    <div class="top-links-icon"><a href="javascript:void(0)"><?php echo __('links');?></a></div>
+                    <?php echo $this->getChildHtml("header.links"); ?>
+                </div>
+                <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+                <div class="search-area">
+                    <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i></a>
+                    <?php echo $this->getChildHtml("top.search"); ?>
+                </div>
+            </div>
+            <div class="bottom-panel">
+                <?php echo $this->getChildHtml("currency"); ?>
+                <?php echo $this->getChildHtml("store_language"); ?>
+                <?php echo $this->getChildHtml("minicart"); ?>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml("navigation.sections"); ?>
+    </div>
+<?php elseif($header_type == 27 ): ?>
+    <div class="header content">
+        <?php echo $this->getChildHtml("logo"); ?>
+        <?php echo $this->getChildHtml("minicart"); ?>
+        <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+        <?php echo $this->getChildHtml("top.search"); ?>
+        <div class="panel header">
+            <?php echo $this->getChildHtml("skip_to_content"); ?>
+            <?php echo $this->getChildHtml("currency"); ?>
+            <?php echo $this->getChildHtml("store_language"); ?>
+            <div class="top-links-area">
+                <div class="top-links-icon"><a href="javascript:void(0)"><?php echo __('links');?></a></div>
+                <?php echo $this->getChildHtml("header.links"); ?>
+            </div>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml("navigation.sections"); ?>
+<?php else: ?>
+    <div class="panel wrapper panel_main fixed-panel scroll_main">
+    	<div class="container">
+	        <div class="panel header">
+	        	<div class="row">
+	        		<div class="col-md-4 widd_col_2">
+	        			<div class="header_social">
+	        				<ul>
+							<li>
+								<a href="https://www.facebook.com/medicosUS/" target="_blank"> <img src="https://www.medicostx.com/media/wysiwyg/wysiwyg/fb.png" alt=""> </a>
+							</li>
+							<li>
+								<a href="https://www.linkedin.com/company/medicostx/?originalSubdomain=il" target="_blank">  <img src="https://www.medicostx.com/media/wysiwyg/wysiwyg/linkedin.png" alt=""> </a>
+							</li>
+							<li>
+								<a href="https://www.instagram.com/medicostx/" target="_blank">  <img src="https://www.medicostx.com/media/wysiwyg/wysiwyg/insta_1.png" alt=""> </a>
+							</li>
+							<div class="clearfix"></div>
+						</ul>
+	        			</div>
+	        		</div>
+	        		<div class="col-md-8 widd_col_10">
+	        			<div class="main_header_left">
+	        				<!--<div class="email_header">
+			            		<p>
+			            			DEFAULT WELCOME MSG!
+			            		</p>
+			            	</div>-->
+							<div class="email_header">
+			            		<p>
+									<?php
+									    $objectManagerlogin = \Magento\Framework\App\ObjectManager::getInstance();
+									    $customerSession = $objectManagerlogin->get('Magento\Customer\Model\Session');
+									    $baseurl = $objectManagerlogin->get('Magento\Store\Model\StoreManagerInterface')->getStore(0)->getBaseUrl();
+									?>
+									    <?php if($customerSession->isLoggedIn()) { ?>
+									   <a href="<?php echo $baseurl .'customer/account/logout'; ?>">Logout</a>
+									    <?php }else { ?>
+									        <a href="<?php echo $baseurl .'customer/account/login'; ?>">Login</a>
+									        <?php
+									    }
+									?>
+			            		</p>
+			            	</div>
+			            	<div class="email_header">
+			            		<a href="<?php echo $baseurl .'customer/account/'; ?>">
+				            		<p>
+				            			My Account
+				            		</p>
+			            		</a>
+			            	</div>
+			            	<div class="email_header">
+			            		<p>
+			            			<a href="mailto:info@medciosmdx.com">Contact Us: info@medciosmdx.com</a>
+			            		</p>
+			            	</div>
+			            	<?php //echo $this->getChildHtml("header.links"); ?>
+	        		    </div>
+	        		</div>
+	        	</div>
+	        </div>
+        </div>
+    </div>
+    <div class="header content main_header">
+    	<div class="container custom-logo-header">
+		    <?php echo $this->getChildHtml("logo"); ?>
+		    <div class="main_left">
+			    <span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+			    <!--<div class="responsive_clearfix"></div> -->
+			    <?php echo $this->getChildHtml("top.search"); ?>
+			    <?php if($header_type > 13):?>
+			    <?php endif;?>
+			    <div class="main_header_set">
+			    	<?php echo $this->getChildHtml("custom_block"); ?>
+	        		<?php echo $this->getChildHtml("minicart"); ?>
+	        		<div class="clearfix"></div>
+	    	    </div>
+    	    	<div class="clearfix"></div>
+    	    </div>
+    	</div>
+    </div>
+    <div class="scroll_main">
+    <?php echo $this->getChildHtml("navigation.sections"); ?>
+    </div>
+<?php endif; ?>
+
+
+</header>
+
+  <!-- Modal -->
+
+<div id="myModal" class="fancybox-wrap fancybox-desktop fancybox-type-inline fancybox-opened" tabindex="" style="width: 700px; height: auto; position: fixed; top: 92px; left: 569px; opacity: 1; overflow: visible; display: none">
+  	<div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;">
+  		<div class="fancybox-outer">
+  			<div class="fancybox-inner" style="overflow: auto; width: 700px; height: auto;">
+  				<div class="newsletter" id="" style="">
+				    <div class="block-content">
+				            <div class="field newsletter" style="margin: 50px">
+				                <h4></h4>
+				            </div>
+				            <div class="modal-body" style="margin: 10px;">
+					        	<h4>Please login to manage your cart.</h4>
+				        	</div>
+				            <div class="modal-footer">
+					        	<a href="/customer/account/login" class="pull-right btn btn-primary" style="color: white; margin: -40px 10px 10px auto;">Login</a>
+				        	</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+		<a title="Close" class="fancybox-item fancybox-close fancybox-newsletter-close" onclick="jQuery('#myModal').hide();" href="javascript:;"></a>
+	</div>
+</div>
+
+	<!-- <div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog modal-md">
+	      	<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" style="display: inline-block;">Alert</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="height: auto">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+		        <div class="modal-body">
+		        	<h4>Please login to manage your cart.</h4>
+		        </div>
+		        <div class="modal-footer">
+		        	<a href="/customer/account/login" class="pull-right btn btn-primary">Login</a>
+	        	</div>
+	      	</div>
+	    </div>
+	</div> -->
+</div>
+<script>
+	var customerObj = "<?=$customerSession->isLoggedIn()?>";
+    if(parseInt(customerObj) !== 1) {
+       jQuery('.price').remove();
+    } else {
+    	jQuery('.price').show()
+    }
+    jQuery(document).ready(function(){
+       var customerObj = "<?=$customerSession->isLoggedIn()?>";
+       	if(parseInt(customerObj) !== 1) {
+           jQuery('.price').remove();
+       	} else {
+	    	jQuery('.price').show()
+	    }
+
+       jQuery('.tocart').click(function(e) {
+           if(parseInt(customerObj) !== 1) {
+               e.preventDefault();
+               jQuery('#myModal').show();
+               return false;
+           }
+       })
+    })
+
+   jQuery(function($) {
+     function fixDiv() {
+       var $cache = $('.scroll_main');
+       if ($(window).scrollTop() > 140){
+         $cache.addClass("getFixed");
+         }
+       else{
+         $cache.removeClass("getFixed");
+       }
+     }
+     $(window).scroll(fixDiv);
+     fixDiv();
+   });
+</script>

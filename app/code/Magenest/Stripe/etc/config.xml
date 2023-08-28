@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+            <magenest_stripe>
+                <active>1</active>
+                <save>0</save>
+                <title>Stripe Credit Card Payment</title>
+                <order_status>processing</order_status>
+                <payment_action>authorize_capture</payment_action>
+                <test>0</test>
+                <email_customer>0</email_customer>
+                <cctypes>AE,VI,MC,DI,JCB</cctypes>
+                <useccv>1</useccv>
+                <allowspecific>0</allowspecific>
+                <additional_config>
+                    <create_order>1</create_order>
+                    <cancel_period_end>1</cancel_period_end>
+                    <enable_total_cycle>0</enable_total_cycle>
+                    <max_total_cycle>20</max_total_cycle>
+                </additional_config>
+
+                <model>Magenest\Stripe\Model\StripePaymentMethod</model>
+            </magenest_stripe>
+
+            <magenest_stripe_iframe>
+                <active>1</active>
+                <title>Stripe Checkout Iframe</title>
+                <allow_bitcoin>0</allow_bitcoin>
+                <payment_action>authorize_capture</payment_action>
+                <allow_alipay>0</allow_alipay>
+                <collect_billing>0</collect_billing>
+                <order_status>processing</order_status>
+                <collect_zip>0</collect_zip>
+                <display_name>Demo Site</display_name>
+                <allow_remember>0</allow_remember>
+                <model>Magenest\Stripe\Model\StripePaymentIframe</model>
+            </magenest_stripe_iframe>
+
+            <magenest_stripe_applepay>
+                <active>1</active>
+                <title>Stripe Payment</title>
+                <payment_action>capture</payment_action>
+                <collect_billing>0</collect_billing>
+                <order_status>processing</order_status>
+                <collect_zip>0</collect_zip>
+                <display_name>Stripe Payment</display_name>
+                <allow_remember>0</allow_remember>
+                <model>Magenest\Stripe\Model\ApplePay</model>
+            </magenest_stripe_applepay>
+
+            <magenest_stripe_giropay>
+                <active>1</active>
+                <title>GiroPay</title>
+                <payment_action>authorize_capture</payment_action>
+                <order_status>processing</order_status>
+                <display_name>Demo Site</display_name>
+                <model>Magenest\Stripe\Model\GiroPay</model>
+            </magenest_stripe_giropay>
+
+            <magenest_stripe_alipay>
+                <active>1</active>
+                <title>Alipay</title>
+                <payment_action>authorize_capture</payment_action>
+                <order_status>processing</order_status>
+                <model>Magenest\Stripe\Model\Alipay</model>
+            </magenest_stripe_alipay>
+
+        </payment>
+    </default>
+</config>

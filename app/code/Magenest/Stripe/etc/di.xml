@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Quote\Model\Quote">
+        <plugin name="stripe_check_nominal" type="\Magenest\Stripe\Model\Plugin\Nominal" sortOrder="10" disabled="false" />
+    </type>
+
+    <!--<type name="Magento\ConfigurableProduct\Model\Product\Type\Configurable">-->
+        <!--<plugin name="stripe_configurable_product_assign_option" type="\Magenest\Stripe\Model\Plugin\ConfigurableProduct" sortOrder="15" disabled="false"/>-->
+    <!--</type>-->
+
+    <virtualType name="SubscriptionGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="PostGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Magenest\Stripe\Model\Resource\Subscription\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">SubscriptionGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magenest\Stripe\Model\ResourceModel\Subscription\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_stripe_subscription</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\Stripe\Model\ResourceModel\Subscription</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="stripe_subscription_listing_data_source" xsi:type="string">Magenest\Stripe\Model\ResourceModel\Subscription\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magenest\Stripe\Helper\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+
+    <type name="Magenest\Stripe\Helper\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">StripeLogger</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">Magenest\Stripe\Helper\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="Magento\Checkout\Model\PaymentInformationManagement" type="Magenest\Stripe\Model\StripePaymentInformation" />
+    <preference for="Magento\Checkout\Model\GuestPaymentInformationManagement" type="Magenest\Stripe\Model\StripeGuestPaymentInformation" />
+</config>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Magenest_Stripe::main" title="Stripe Payment"
+             module="Magenest_Stripe" sortOrder="30"
+             dependsOnModule="Magenest_Stripe"
+             resource="Magenest_Stripe::main" />
+        <add id="Magenest_Stripe::subscription"
+             title="Subscription Manager" module="Magenest_Stripe"
+             sortOrder="10" parent="Magenest_Stripe::main"
+             action="stripe/subscription/index"
+             resource="Magenest_Stripe::subscription" />
+        <add id="Magenest_Stripe::settings"
+             title="Settings" module="Magenest_Stripe"
+             sortOrder="20" parent="Magenest_Stripe::main"
+             action="adminhtml/system_config/edit/section/payment/stripe"
+             resource="Magenest_Stripe::subscription" />
+    </menu>
+</config>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <virtualType name="Magenest\Stripe\Model\ConfigProvider" type="Magento\Payment\Model\CcGenericConfigProvider">
+        <arguments>
+            <argument name="methodCodes" xsi:type="array">
+                <item name="magenest_stripe" xsi:type="const">Magenest\Stripe\Model\StripePaymentMethod::CODE</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Magenest\Stripe\Model\ApplePayConfigProvider" type="Magento\Payment\Model\CcGenericConfigProvider">
+        <arguments>
+            <argument name="methodCodes" xsi:type="array">
+                <item name="magenest_stripe_applepay" xsi:type="const">Magenest\Stripe\Model\ApplePay::CODE</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+
+    <virtualType name="Magenest\Stripe\Model\GiroPayConfigProvider" type="Magento\Payment\Model\CcGenericConfigProvider">
+        <arguments>
+            <argument name="methodCodes" xsi:type="array">
+                <item name="magenest_stripe_giropay" xsi:type="const">Magenest\Stripe\Model\GiroPay::CODE</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="magenest_stripe_config_provider" xsi:type="object">Magenest\Stripe\Model\ConfigProvider</item>
+                <item name="magenest_stripe_applepay_config_provider" xsi:type="object">Magenest\Stripe\Model\ApplePayConfigProvider</item>
+                <item name="magenest_stripe_giropay_config_provider" xsi:type="object">Magenest\Stripe\Model\GiroPayConfigProvider</item>
+                <item name="magenest_stripe_alipay_config_provider" xsi:type="object">Magenest\Stripe\Model\AlipayConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="MagenestStripeIframeCcConfigProvider" type="Magento\Payment\Model\IframeConfigProvider">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Magenest\Stripe\Model\StripePaymentMethod::CODE</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Magenest\Stripe\Model\AlipayConfigProvider" type="Magento\Payment\Model\CcGenericConfigProvider">
+        <arguments>
+            <argument name="methodCodes" xsi:type="array">
+                <item name="magenest_stripe_alipay" xsi:type="const">Magenest\Stripe\Model\Alipay::CODE</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

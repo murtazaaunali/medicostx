@@ -1,0 +1,29 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: hiennq
+ * Date: 5/24/17
+ * Time: 8:38 AM
+ */
+
+/** @var Magenest\Stripe\Block\Payment $block */
+
+?>
+<script>
+    //<![CDATA[
+    require(
+        [
+            'Magenest_Stripe/js/stripe/stripe-payment',
+            'jquery',
+            'domReady!'
+        ], function(StripePay, $) {
+            var publicKey = '<?php echo $block->getPublishableKey() ?>';
+            var form = $('#payment_form_<?php /* @noEscape */ echo $block->getCode() ?>');
+            var config;
+            //console.log(publicKey);
+            window.publicKey = publicKey;
+            //var payment = new StripePay();
+
+        });
+    //]]>
+</script>

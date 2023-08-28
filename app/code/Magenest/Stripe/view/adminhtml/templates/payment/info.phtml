@@ -1,0 +1,170 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * @var \Magento\Payment\Block\Form\Cc $block
+ */
+
+// @codingStandardsIgnoreFile
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+/** @var \Magenest\Stripe\Helper\Config $config */
+$config = $objectManager->create('Magenest\Stripe\Helper\Config');
+$publicKey = $config->getPublishableKey();
+$code = $block->escapeHtml($block->getMethodCode());
+$method = $block->getMethod();
+$controller = $block->escapeHtml($block->getRequest()->getControllerName());
+$ccType = $block->getInfoData('cc_type');
+$ccExpMonth = $block->getInfoData('cc_exp_month');
+$ccExpYear = $block->getInfoData('cc_exp_year');
+?>
+<fieldset class="admin__fieldset payment-method" id="payment_form_<?php /* @noEscape */ echo $code; ?>"
+          style="display:none;">
+    <p id="text_warning" style="font-weight:bold;color: red">You must validate card before submit order</p>
+    <div class="admin__field-control">
+        <input style="display: none" type="text" id="<?php /* @noEscape */ echo $code; ?>_token"
+                   name="payment[stripe_token]"
+                   class="input-text admin__control-text"
+                   value=""/>
+        <input style="display: none" type="text" id="<?php /* @noEscape */ echo $code; ?>_raw_card_data"
+               name="payment[raw_card_data]"
+               class="input-text admin__control-text"
+               value=""/>
+    </div>
+
+    <div class="admin__field _required">
+        <label for="<?php /* @noEscape */ echo $code; ?>_cc_type" class="admin__field-label">
+            <span><?php echo $block->escapeHtml(__('Credit Card Type')); ?></span>
+        </label>
+        <div class="admin__field-control">
+            <select id="<?php /* @noEscape */ echo $code; ?>_cc_type" name="payment[cc_type]"
+                    class="required-entry validate-cc-type-select admin__control-select">
+                <option value=""></option>
+                <?php foreach ($block->getCcAvailableTypes() as $typeCode => $typeName): ?>
+                    <option value="<?php echo $block->escapeHtml($typeCode); ?>"
+                            <?php if ($typeCode == $ccType): ?>selected="selected"<?php endif; ?>>
+                        <?php echo $block->escapeHtml($typeName); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+    <div class="admin__field _required">
+        <label for="<?php /* @noEscape */ echo $code; ?>_cc_number" class="admin__field-label">
+            <span><?php echo $block->escapeHtml(__('Credit Card Number')); ?></span>
+        </label>
+
+        <div class="admin__field-control">
+            <input type="text" id="<?php /* @noEscape */ echo $code; ?>_cc_number"
+                   name="payment[cc_number]"
+                   class="input-text required-entry validate-cc-number admin__control-text"
+                   value="<?php /* @noEscape */ echo $block->getInfoData('cc_number'); ?>"/>
+        </div>
+    </div>
+    <div class="admin__field _required">
+        <label for="<?php /* @noEscape */ echo $code; ?>_expiration" class="admin__field-label">
+            <span><?php echo $block->escapeHtml(__('Expiration Date')); ?></span>
+        </label>
+
+        <div class="admin__field-control">
+            <select id="<?php /* @noEscape */ echo $code; ?>_expiration"
+                    name="payment[cc_exp_month]"
+                    class="validate-cc-exp required-entry admin__control-select admin__control-select-month">
+                <?php foreach ($block->getCcMonths() as $k => $v): ?>
+                    <option value="<?php echo $block->escapeHtml($k); ?>"
+                            <?php if ($k == $ccExpMonth): ?>selected="selected"<?php endif; ?>>
+                        <?php echo $block->escapeHtml($v); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <select id="<?php /* @noEscape */ echo $code; ?>_expiration_yr"
+                    name="payment[cc_exp_year]"
+                    class="required-entry admin__control-select admin__control-select-year">
+                <?php foreach ($block->getCcYears() as $k => $v): ?>
+                    <option value="<?php /* @noEscape */ echo $k ? $block->escapeHtml($k) : ''; ?>"
+                            <?php if ($k == $ccExpYear): ?>selected="selected"<?php endif; ?>>
+                        <?php echo $block->escapeHtml($v); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+    <?php if ($block->hasVerification()): ?>
+        <div class="admin__field _required">
+            <label for="<?php /* @noEscape */ echo $code; ?>_cc_cid">
+                <span><?php echo $block->escapeHtml(__('Card Verification Number')); ?></span>
+            </label>
+
+            <div class="admin__field-control">
+                <input type="text"
+                       class="required-entry input-text validate-cc-cvn admin__control-text"
+                       id="<?php /* @noEscape */ echo $code; ?>_cc_cid" name="payment[cc_cid]"
+                       value="<?php /* @noEscape */ echo $block->getInfoData('cc_cid') ?>"/>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <button class="btn btn-primary" id="btn_tokenizer">Validate card</button>
+</fieldset>
+
+<script>
+    require([
+        'jquery',
+        'prototype',
+        'Magento_Sales/order/create/scripts',
+        "Magento_Sales/order/create/form",
+        'https://js.stripe.com/v2/'
+    ], function($){
+        //console.log('<?php echo $publicKey ?>');
+        Stripe.setPublishableKey('<?php echo $publicKey ?>');
+        /**
+         * Disable card server validation in admin
+         */
+        order.addExcludedPaymentMethod('<?php /* @noEscape */ echo $code; ?>');
+
+        $('#btn_tokenizer').on("click", function (e) {
+            e.preventDefault(e);
+            e.stopPropagation(e);
+            var form = $('#edit_form'),
+                ccNumber =  form.find("#magenest_stripe_cc_number"),
+                ccCid = form.find("#magenest_stripe_cc_cid");
+            var token;
+            var rawCardData;
+            var firstName = $("#order-billing_address_firstname").val();
+            var lastName = $("#order-billing_address_lastname").val();
+            Stripe.card.createToken({
+                number: ccNumber.val(),
+                cvc: ccCid.val(),
+                exp_month: $('#magenest_stripe_expiration').val(),
+                exp_year: $('#magenest_stripe_expiration_yr').val(),
+                name: firstName + " " + lastName,
+                address_line1: $("#order-billing_address_street0").val(),
+                address_city: $("#order-billing_address_city").val(),
+                address_state: $("#order-billing_address_region_id").val(),
+                address_zip: $("#order-billing_address_postcode").val(),
+                address_country: $("#order-billing_address_country_id").val()
+            }, function (status, response) {
+                //console.log(response);
+                if (response.error) {
+                    $('#text_warning').text("Card validate error");
+                    $('#text_warning').css({"color": "red", "font-weight":"bold"});
+                    form.find('#magenest_stripe_token').val("");
+                    form.find('#magenest_stripe_cc_number').val("");
+                    form.find('#magenest_stripe_cc_cid').val("");
+                } else {
+                    $('#text_warning').text("Card validated");
+                    $('#text_warning').css({"color": "green", "font-weight":"bold"});
+                    token = response.id;
+                    rawCardData = JSON.stringify(response.card);
+                    form.find('#magenest_stripe_token').val(token);
+                    form.find('#magenest_stripe_raw_card_data').val(rawCardData);
+                    // form.find('#magenest_stripe_cc_number').val("****************");
+                    // form.find('#magenest_stripe_cc_cid').val("****");
+                }
+            });
+            return false;
+        });
+    });
+</script>
